@@ -1,21 +1,21 @@
-
 section .text
 global _ft_strcmp
 
 _ft_strcmp:
     xor rcx, rcx
-loop
-    mov al, [rdi + rcx]
-    mov bl, [rsi + rcx]
-    cmp al, 0x0
-    je  _end
-    cmp bl, 0x0
-    je  _end
-    cmp al, bl
-    jne _end
+    jmp loop
+loop:
+    mov r8b, [rdi + rcx]
+    mov r9b, [rsi + rcx]
+    cmp r8b, 0x0
+    je  end
+    cmp r9b, 0x0
+    je  end
+    cmp r8b, r9b
+    jne end
     inc rcx
-    jmp _loop
-_end
-    sub al, bl
-    mov rax, al
+    jmp loop
+end:
+    sub r8b, r9b
+    movsx rax, r8b
     ret

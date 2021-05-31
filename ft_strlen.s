@@ -2,12 +2,11 @@ section .text
 global _ft_strlen
 
 _ft_strlen:
-    xor rcx, rcx
+    xor rax, rax
 loop:
-    cmp BYTE [rdi + rcx], 0
+    cmp BYTE [rdi + rax], 0
     je end
-    inc rcx
+    inc rax
     jmp loop
 end:
-    mov rax, rcx
     ret

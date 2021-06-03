@@ -8,9 +8,9 @@ _ft_strdup:
     call _ft_strlen
     push rdi
     inc rax
-    mov rdi, rax
+    mov rdi,rax
     call _malloc
-    pop rdi
+    pop rsi
     mov rdi, rax
     call _ft_strcpy
     ret

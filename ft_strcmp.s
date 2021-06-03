@@ -3,6 +3,9 @@ global _ft_strcmp
 
 _ft_strcmp:
     xor rcx, rcx
+    xor rax, rax
+    xor r8, r8
+    xor r9, r9
     jmp loop
 loop:
     mov r8b, [rdi + rcx]
@@ -16,6 +19,6 @@ loop:
     inc rcx
     jmp loop
 end:
-    sub r8b, r9b
-    movsx rax, r8b
+    sub r8, r9
+    mov rax, r8
     ret

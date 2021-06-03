@@ -9,10 +9,9 @@ _ft_write:
     ret
 
 error:
-    mov r8 , rax
-    push r8
+    push rax
     call ___error
     pop r8
-    mov [rax], r8
+    mov [rax], r8 
     mov rax, -1
     ret
